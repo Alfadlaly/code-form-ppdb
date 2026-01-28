@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>PPDB Yayasan Al-Fadlaly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <img src="assets/img/logo.png" class="logo">
+    <div>
+      <h1>SPMB YAYASAN AL-FADLALY</h1>
+      <p>Tahun Ajaran 2025 / 2026</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Pilih Jenjang</h2>
+
+    <div class="jenjang-list">
+      <button onclick="pilihJenjang('KB')">KB</button>
+      <button onclick="pilihJenjang('SDI')">SDI</button>
+      <button onclick="pilihJenjang('SMP')">SMP</button>
+      <button onclick="pilihJenjang('SMK')">SMK</button>
+    </div>
+  </div>
+</main>
+
+<script>
+  function pilihJenjang(j) {
+    localStorage.setItem("jenjang", j);
+    window.location.href = "pages/form-murid.html";
+  }
+</script>
+
+</body>
+</html>

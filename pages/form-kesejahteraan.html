@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>PPDB Al-Fadlaly | Kesejahteraan Peserta Didik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-content">
+      <img src="../assets/img/logo.png" alt="Logo Al-Fadlaly" class="logo">
+      <div>
+        <h1>SPMB YAYASAN AL-FADLALY</h1>
+        <p>Tahun Ajaran 2025 / 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="container">
+    <div class="form-card">
+      <h2>KESEJAHTERAAN PESERTA DIDIK</h2>
+      <p class="subtitle">
+        Silakan isi data bantuan kesejahteraan jika peserta didik memilikinya.
+      </p>
+
+      <form id="formKesejahteraan">
+
+        <div class="form-group">
+          <label>Jenis Kesejahteraan</label>
+          <select name="jenis_kesejahteraan">
+            <option value="">-- Pilih --</option>
+            <option value="PKH">PKH</option>
+            <option value="KIP">KIP</option>
+            <option value="KKS">KKS</option>
+            <option value="PIP">PIP</option>
+            <option value="Tidak Ada">Tidak Ada</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Nomor Kartu (Jika Ada)</label>
+          <input type="text" name="nomor_kartu">
+        </div>
+
+        <div class="form-group">
+          <label>Nama di Kartu (Jika Ada)</label>
+          <input type="text" name="nama_di_kartu">
+        </div>
+
+        <!-- ===== NAVIGASI ===== -->
+        <div class="form-navigation">
+          <a href="form-wali.html" class="btn secondary">← Kembali</a>
+          <button type="submit" class="btn">Lanjut →</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    document.getElementById("formKesejahteraan").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const data = Object.fromEntries(new FormData(this).entries());
+      localStorage.setItem("dataKesejahteraan", JSON.stringify(data));
+
+      window.location.href = "form-upload.html";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Upload Berkas | PPDB Al-Fadlaly</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+.form-item label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.form-item input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+.form-action {
+  margin-top: 35px;
+  text-align: center;
+}
+.form-action button {
+  padding: 14px 36px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+#status {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+  <div class="form-card">
+    <h2>UPLOAD BERKAS PENDAFTARAN</h2>
+
+    <form id="formUpload">
+
+      <div class="form-grid">
+
+        <div class="form-item">
+          <label>Pas Foto *</label>
+          <input type="file" name="pas_foto" accept="image/*" required>
+        </div>
+
+        <div class="form-item">
+          <label>Kartu Keluarga *</label>
+          <input type="file" name="kk" accept="image/*,application/pdf" required>
+        </div>
+
+        <div class="form-item">
+          <label>Akte Kelahiran *</label>
+          <input type="file" name="akte" accept="image/*,application/pdf" required>
+        </div>
+
+        <div class="form-item" id="skl-box">
+          <label>Surat Keterangan Lulus</label>
+          <input type="file" name="skl" accept="image/*,application/pdf">
+        </div>
+
+      </div>
+
+      <div class="form-action">
+        <button type="submit">Kirim Pendaftaran</button>
+      </div>
+
+      <div id="status"></div>
+
+    </form>
+  </div>
+</main>
+
+<script src="upload.js"></script>
+
+</body>
+</html>
